@@ -13,27 +13,23 @@ require_once 'clases/ListaPersonas.php';
 					<label for="correo">
 						Correo
 					</label>
-					<input class="form-control" id="correo" name="correo" type="text" value="<?php 
-                                                                        // seleccionar el valor
-							?>"/>
+					<input class="form-control" id="correo" name="correo" type="text" value="<?= $_GET['correo'] ?? ''?>"/>
 				</div>
 				<div class="form-group">
 					 
 					<label for="apellido">
 						Apellido
 					</label>
-					<input class="form-control" id="apellido" name="apellido" type="text" value="<?php
-                                                                        // seleccionar el valor
-					?>"/>
+					<input class="form-control" id="apellido" name="apellido" type="text" value="<?= $_GET['apellido'] ?? ''?>"/>
 				</div>
 				<div class="checkbox">
 					<label for="estudiante">
 						¿Es Estudiante?
 					</label>
 					 <select name="estudiante" id="estudiante">
-					 	<option value="" <?= '';  ?>  > - </option>
-					 	<option value="S" <?= ''; ?>  > Si </option>
-					 	<option value="N" <?= ''; ?> > No </option>
+					 	<option value="" <?= empty($_GET['estudiante'])?'selected':''; ?>  > - </option>
+					 	<option value="S" <?= !empty($_GET['estudiante']) && $_GET['estudiante']=='S'?'selected':'';  ?>  > Si </option>
+					 	<option value="N" <?= !empty($_GET['estudiante']) && $_GET['estudiante']=='N'?'selected':'';    ?> > No </option>
 					 </select>
 				</div> 
 				<button type="submit" class="btn btn-primary" name="boton">

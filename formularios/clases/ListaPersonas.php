@@ -36,8 +36,16 @@ class ListaPersonas
         $listaResultado = [];
         foreach(self::$lista as $persona)
         {
-            // utilizar el criterio para devolver los valores
-            $listaResultado[] = $persona;
+            if(
+                    !(array_key_exists('boton', $parametros)) ||
+                    (
+                        (empty($parametros['correo']) || $parametros['correo']==$persona['correo']) &&
+                            (empty($parametros['apellido']) || $parametros['apellido']==$persona['apellido']) &&
+                            (empty($parametros['estudiante']) || $parametros['estudiante']==$persona['estudiante'])
+                    )
+              ){
+                  $listaResultado[] = $persona;
+              }        
         }
         return $listaResultado;
         
