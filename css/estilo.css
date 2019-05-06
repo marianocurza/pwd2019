@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+
+.holygrail {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.holygrail-body {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    /* @include media-breakpoint-up(lg) */
+    .holygrail-body {
+        flex-direction: row;
+    }
+    .holygrail-main {
+        flex: 1;
+    }
+    .holygrail-nav,
+    .holygrail-aside {
+        flex: 0 0 auto;
+    }
+}
+
+/* Other styles */
+
+.block {
+    padding: 3rem 0;
+}
+
+.text-inverse {
+    color: white;
+}
