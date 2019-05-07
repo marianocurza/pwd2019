@@ -8,4 +8,8 @@ class CajaAhorro extends Cuenta {
         parent::__construct($nroCuenta, $cliente, $saldo);
     }
     
+    public function agregar(ICuenta $visitorIn):bool {
+        return $visitorIn->agregarCajaAhorro($this);
+    }
+    
 }

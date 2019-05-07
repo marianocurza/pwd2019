@@ -12,7 +12,7 @@ if(isset($_POST['boton'])){
     $cliente = $banco->buscarClientePorNumero($ca['nroCliente']);
     if($cliente){
         $cajaAhorro = new CajaAhorro($ca['nroCuenta'], $cliente, $ca['saldo']);
-        if($banco->agregarCuenta($cajaAhorro)){
+        if($banco->agregar($cajaAhorro)){
             $mensaje = 'Cuenta agregada';
         }else{
             $mensaje = 'Error';

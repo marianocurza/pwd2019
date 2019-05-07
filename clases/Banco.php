@@ -4,8 +4,9 @@ require_once 'Cliente.php';
 require_once 'CuentaCorriente.php';
 require_once 'CajaAhorro.php';
 require_once '../interfaces/IArray.php';
+require_once '../interfaces/ICuenta.php';
 
-class Banco implements IArray {
+class Banco implements IArray, ICuenta {
     
     protected $coleccionClientes;
     protected $coleccionCajasAhorro;
@@ -27,17 +28,7 @@ class Banco implements IArray {
         }
     }
     
-    public function agregarCuenta(Cuenta $cuenta): bool {
-        switch(true){
-            case $cuenta instanceof CajaAhorro:
-                return $this->agregarCajaAhorro($cuenta);
-                break;
-            case $cuenta instanceof CuentaCorriente:
-                return $this->agregarCuentaCorriente($cuenta);
-                break;
-        }
-    }
-    
+
     public function realizarDeposito(string $numCuenta, int $monto): void {
         // buscar cuenta
         // $cuentaEncontrada->realizarDeposito($monto);
@@ -61,8 +52,12 @@ class Banco implements IArray {
         return null;
     }
     
+    public function agregar(Cuenta $cuenta): bool {
+        return $cuenta->agregar($this);
+    }
+    
 
-    private function agregarCajaAhorro(CajaAhorro $ca): bool {
+    public function agregarCajaAhorro(CajaAhorro $ca): bool {
         // verificar si existe la caja de ahorro
         if(!$this->existeCajaAhorro($ca)){
             $this->coleccionCajasAhorro[] = $ca;
@@ -72,7 +67,7 @@ class Banco implements IArray {
         }
     }
 
-    private function agregarCuentaCorriente(CuentaCorriente $cc): bool {
+    public function agregarCuentaCorriente(CuentaCorriente $cc): bool {
         // verificar si existe la cuenta corriente
         if(!$this->existeCuentaCorriente($cc)){
             $this->coleccionCuentasCorriente[] = $cc;

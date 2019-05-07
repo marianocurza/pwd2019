@@ -2,6 +2,7 @@
 require_once '../interfaces/IArray.php';
 require_once 'Cliente.php';
 
+
 abstract class Cuenta implements IArray {
     protected $nroCuenta;
     protected $cliente;
@@ -13,6 +14,8 @@ abstract class Cuenta implements IArray {
         $this->saldo = $saldo;
         
     }
+    
+    public abstract function agregar(ICuenta $visitorIn):bool;
     
     public function realizarDeposito(int $monto): bool {
         return false;

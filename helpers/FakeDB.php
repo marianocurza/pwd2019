@@ -20,13 +20,13 @@ class FakeDB
             {
                 $cliente = new Cliente($ca['cliente']['dni'], $ca['cliente']['nombre'], $ca['cliente']['apellido'], $ca['cliente']['nroCliente']);
                 $cajaAhorro = new CajaAhorro($ca['nroCuenta'], $cliente, $ca['saldo']);
-                $banco->agregarCuenta($cajaAhorro);
+                $cajaAhorro->agregar($banco);
             }
             foreach ($_SESSION['banco']['coleccionCuentasCorriente'] as $cc)
             {
                 $cliente = new Cliente($cc['cliente']['dni'], $cc['cliente']['nombre'], $cc['cliente']['apellido'], $cc['cliente']['nroCliente']);
                 $cuentaCorriente = new CuentaCorriente($cc['nroCuenta'], $cliente, $cc['saldo'], $cc['descubierto']);
-                $banco->agregarCuenta($cuentaCorriente);
+                $cuentaCorriente->agregar($banco);
             }
             self::$banco = $banco;
             
@@ -41,12 +41,13 @@ class FakeDB
             
             $cajaAhorro1 = new CajaAhorro('1', $cliente1, 100);
             $cajaAhorro2 = new CajaAhorro('2', $cliente2, 200);
-            $banco->agregarCuenta($cajaAhorro1);
-            $banco->agregarCuenta($cajaAhorro2);
-
             $cuentaCorriente3 = new CuentaCorriente('3', $cliente3, 300, 1000);
-            $banco->agregarCuenta($cuentaCorriente3);
             
+            $banco->agregar($cajaAhorro1);
+            $banco->agregar($cajaAhorro2);
+            $banco->agregar($cuentaCorriente3);
+            
+
             self::$banco = $banco;
         }
     }

@@ -11,6 +11,11 @@ class CuentaCorriente extends Cuenta {
         $this->descubierto = $descubierto;
     }
     
+    public function agregar(ICuenta $visitorIn):bool {
+        return $visitorIn->agregarCuentaCorriente($this);
+    }
+    
+    
     // método interno para serializar la clase a un array
     public function toArray(): array{
         $arreglo = parent::toArray();
