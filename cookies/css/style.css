@@ -1,0 +1,48 @@
+.search-form{
+    display: inherit;
+}
+#barra-navegacion {
+    height: 40px;    
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: #025aa5 solid;
+}
+
+#bloque-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+#input-usuario {
+    margin-top: auto;
+    display: inherit;
+}
+#input-usuario::placeholder {
+    font-size: 11px;
+}
+
+#opciones-idioma {
+    list-style: none;
+}
+#opciones-idioma > li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#contenido-central {    
+    width: 400px;
+    height: 400px;
+}
+
+#contenido-central.eng
+{
+    background-color: blue;
+}
+
+#contenido-central.es
+{
+    background-color: red;
+}
