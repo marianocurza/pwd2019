@@ -1,0 +1,11 @@
+<article>
+    <header>
+        <?=$cabecera?>
+    </header>
+    <section>
+        <?=$cuerpo?>
+    </section>
+    <footer>
+        <?=$pie?>
+    </footer>
+</article>

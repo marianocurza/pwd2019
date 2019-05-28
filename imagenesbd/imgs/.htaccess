@@ -1,0 +1,3 @@
+#descomentar lo siguiente para restringir la navegación vía URL
+#deny from all
+
