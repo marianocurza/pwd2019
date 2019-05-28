@@ -16,7 +16,7 @@ if(isset($_COOKIE['visitas']))
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>PWD 2018 - Cookies</title>
+        <title>PWD 2019 - Cookies</title>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
