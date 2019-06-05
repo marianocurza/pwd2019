@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">PWD 2018</a>
+      <a class="navbar-brand" href="#">PWD 2019</a>
     </div>
       <form class="navbar-form navbar-left" action="<?= SITE_ROOT ?>index.php">
         <div class="form-group">

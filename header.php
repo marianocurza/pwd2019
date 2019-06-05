@@ -1,5 +1,13 @@
 <?php
-define ("SITE_ROOT", '/practicas/unidadtres/');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+define ("SITE_ROOT", '/');
+
+if(!isset($_SESSION['usuario'])){
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>

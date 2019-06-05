@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace app\clases;
 
-use \Object;
-
 interface IRegistro {
     
     public function insertar(): bool;

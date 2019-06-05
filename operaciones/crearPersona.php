@@ -10,9 +10,6 @@ use app\clases\Db;
 use app\clases\Amigo;
 use app\clases\Persona;
 use app\clases\Compania;
-use \TypeError;
-use \Throwable;
-use \Exception;
 
 if(isset($_POST['btnGuardarPersona']))
 {
@@ -53,3 +50,8 @@ if(isset($_POST['btnGuardarPersona']))
 <div>
     <?= $mensaje ?>
 </div>
+
+
+<?php
+require_once '../footer.php';
+?>

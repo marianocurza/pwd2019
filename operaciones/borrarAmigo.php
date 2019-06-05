@@ -5,8 +5,6 @@ require_once '..'.DIRECTORY_SEPARATOR.'clases'.DIRECTORY_SEPARATOR.'Amigo.php';
 require_once '..'.DIRECTORY_SEPARATOR.'clases'.DIRECTORY_SEPARATOR.'NullObjectError.php';
 use app\clases\Amigo;
 use app\clases\NullObjectError;
-use \TypeError;
-use \Throwable;
 if(isset($_GET['idAmigo']))
 {
     try 
@@ -29,3 +27,8 @@ if(isset($_GET['idAmigo']))
 <div>
     <?= $mensaje ?>
 </div>
+
+
+<?php
+require_once '../footer.php';
+?>
