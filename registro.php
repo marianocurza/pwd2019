@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
 require_once 'clases/Usuario.php';
 use app\clases\Usuario;
 $usuario = new Usuario();
