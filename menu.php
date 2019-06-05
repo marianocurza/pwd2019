@@ -19,6 +19,7 @@
       <ul class="nav navbar-nav">
         <li><a href="<?= SITE_ROOT ?>index.php" class="active">Listado</a></li>
         <li><a href="<?= SITE_ROOT ?>formularioPersona.php">Nueva Persona</a></li>
+        <li><a href="#">Usuario: XXXX // Desconectar</a></li>
       </ul>
     </div>
   </div>

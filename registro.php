@@ -6,11 +6,13 @@ session_start();
 require_once 'clases/Usuario.php';
 use app\clases\Usuario;
 $usuario = new Usuario();
-if($usuario->registrarUsuario('jose', 'jose')){
-    echo "usuario registrado";
-}else{
-    echo "error al registrar usuario";
-}
+// si quitan los comentarios, se registra en el sistem el usuario jose/jose
+// Nota: Recuerden que hay un índice único para el campo usuario
+//if($usuario->registrarUsuario('jose', 'jose')){
+//    echo "usuario registrado";
+//}else{
+//    echo "error al registrar usuario";
+//}
 ?>
 <!DOCTYPE html>
 <html>
