@@ -1,0 +1,11 @@
+.container-fluid .cabecera {
+    height: 100px;
+    background: rgba(0,0,0,0.35);
+}
+.container-fluid .row .cabecera h3 {
+    line-height: 100px;
+}
+.info {
+    display: flex;
+    justify-content: center;
+}
